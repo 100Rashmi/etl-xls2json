@@ -3,8 +3,8 @@ import json
 import boto3
 import config
 
-lambda_client = boto3.client('lambda')
-iam_client = boto3.client('iam')
+lambda_client = boto3.client('lambda', region_name=config.REGION_NAME)
+iam_client = boto3.client('iam', region_name=config.REGION_NAME)
 
 def get_role():
     #get role
@@ -82,7 +82,7 @@ def delete_and_create_lambda_function():
 
 def init_s3_bucket():
     #create bucket
-    s3_client = boto3.client('s3')
+    s3_client = boto3.client('s3', region_name=config.REGION_NAME)
     try:
         response = s3_client.create_bucket(
             ACL='private',
