@@ -27,4 +27,5 @@ Following script builds the package and uploads the python package to the lambda
 
 
 # How to use.
-This lambda function can be used to
+This lambda function needs a trigger to be invoked.
+See https://docs.aws.amazon.com/lambda/latest/dg/invoking-lambda-function.html for more info.
